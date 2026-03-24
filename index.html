@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Website</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('trend')">Trend</a>
+        <a href="#" onclick="showSection('mixing')">Mixing</a>
+    </nav>
+
+    <section id="home">
+        <h1>Welcome to My Website</h1>
+        <p>This is the home page. Click the links above to see other pages.</p>
+    </section>
+
+    <section id="trend" class="hidden">
+        <h1>Trend Page</h1>
+        <p>This is the trend page. Go back to home or check mixing page.</p>
+    </section>
+
+    <section id="mixing" class="hidden">
+        <h1>Mixing Page</h1>
+        <p>This is the mixing page. Go back to home or check trend page.</p>
+    </section>
+
+    <script>
+        // Simple JS to switch sections
+        function showSection(id) {
+            document.querySelectorAll('section').forEach(sec => {
+                sec.classList.add('hidden');
+            });
+            document.getElementById(id).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
